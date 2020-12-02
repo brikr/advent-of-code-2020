@@ -1,3 +1,6 @@
+# Transpiled JS
+build/
+
 # Logs
 logs
 *.log
