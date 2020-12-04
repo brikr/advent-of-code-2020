@@ -40,21 +40,18 @@ function isValidPassportPart2(passport: Passport): boolean {
   // byr
   const byr = Number(passport.byr);
   if (byr < 1920 || byr > 2002) {
-    console.log(passport, 'byr');
     return false;
   }
 
   // iyr
   const iyr = Number(passport.iyr);
   if (iyr < 2010 || iyr > 2020) {
-    console.log(passport, 'iyr');
     return false;
   }
 
   // eyr
   const eyr = Number(passport.eyr);
   if (eyr < 2020 || eyr > 2030) {
-    console.log(passport, 'eyr');
     return false;
   }
 
@@ -66,12 +63,10 @@ function isValidPassportPart2(passport: Passport): boolean {
 
     if (hgtUnit === 'in') {
       if (hgtAmt < 59 || hgtAmt > 76) {
-        console.log(passport, 'hgt');
         return false;
       }
     } else {
       if (hgtAmt < 150 || hgtAmt > 193) {
-        console.log(passport, 'hgt');
         return false;
       }
     }
@@ -82,21 +77,18 @@ function isValidPassportPart2(passport: Passport): boolean {
   // hcl
   const hclMatch = passport.hcl.match(/^#[0-9a-f]{6}$/);
   if (hclMatch === null) {
-    console.log(passport, 'hcl');
     return false;
   }
 
   // ecl
   const {ecl} = passport;
   if (!['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'].includes(ecl)) {
-    console.log(passport, 'ecl');
     return false;
   }
 
   // pid
   const pidMatch = passport.pid.match(/^[0-9]{9}$/);
   if (pidMatch === null) {
-    console.log(passport, 'pid');
     return false;
   }
 
