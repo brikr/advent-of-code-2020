@@ -1,4 +1,4 @@
-import {createReadStream} from 'fs';
+import {createReadStream, readFileSync} from 'fs';
 import {createInterface} from 'readline';
 
 export async function fileMap<T>(
@@ -19,4 +19,17 @@ export async function fileMap<T>(
   }
 
   return values;
+}
+
+export function fileLines(filename: string): string[] {
+  return fileMapSync(filename, line => line);
+}
+
+export function fileMapSync<T>(
+  filename: string,
+  iteratee: (line: string, index: number) => T
+): T[] {
+  return readFileSync(filename, {encoding: 'utf8', flag: 'r'})
+    .split('\n')
+    .map(iteratee);
 }
