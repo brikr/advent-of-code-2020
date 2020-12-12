@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "solution": "npm run compile && node build/day$npm_config_day/day$npm_config_day.js",
+    "solution:debug": "npm run compile && node --inspect-brk build/day$npm_config_day/day$npm_config_day.js",
     "lint": "gts lint",
     "fix": "gts fix",
     "compile": "rimraf build/ && tsc"
