@@ -40,3 +40,11 @@ export function printSolution(part1: number | string, part2: number | string) {
   console.log('Part 2:');
   console.log(part2);
 }
+
+export function uuid(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = (Math.random() * 16) | 0,
+      v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
