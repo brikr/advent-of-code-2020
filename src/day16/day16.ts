@@ -1,20 +1,5 @@
-import {Console} from 'console';
-import {KeyObject} from 'crypto';
 import {sum} from 'lodash';
-import {fileLines, printSolution} from '../utils';
-
-class MapWithDefault<K, V> extends Map<K, V> {
-  def: V;
-
-  constructor(def: V) {
-    super();
-    this.def = def;
-  }
-
-  get(key: K): V {
-    return super.get(key) ?? this.def;
-  }
-}
+import {fileLines, MapWithDefault, printSolution} from '../utils';
 
 interface FieldRange {
   low: number;

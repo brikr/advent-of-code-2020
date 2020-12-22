@@ -48,3 +48,16 @@ export function uuid(): string {
     return v.toString(16);
   });
 }
+
+export class MapWithDefault<K, V> extends Map<K, V> {
+  def: V;
+
+  constructor(def: V) {
+    super();
+    this.def = def;
+  }
+
+  get(key: K): V {
+    return super.get(key) ?? this.def;
+  }
+}
